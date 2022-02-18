@@ -16,3 +16,6 @@ jobs:
       - name: create a file
         shell: bash -l {0}
         run: touch helloworld.txt
+      - name: create a file
+        shell: bash -l {0}
+        run: bash test.sh 
