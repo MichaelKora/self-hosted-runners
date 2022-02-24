@@ -30,3 +30,5 @@ override.tf.json
 .env
 *un~
 openrc.sh
+*test*
+mytoken.txt
