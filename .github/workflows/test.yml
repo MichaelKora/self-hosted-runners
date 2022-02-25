@@ -19,6 +19,8 @@ jobs:
       GITHUB_OWNER: ${{ github.actor }}
 
     steps:
+      - uses: actions/checkout@v2
+      
       - name: current dir
         shell: bash -l {0}
         run: pwd
