@@ -19,7 +19,11 @@ jobs:
       GITHUB_OWNER: ${{ github.actor }}
 
     steps:
-      - name: connect to open stack
+      - name: current dir
+        shell: bash -l {0}
+        run: pwd
+      
+      - name: list
         shell: bash -l {0}
         run: ls -al
       - name: connect to open stack
