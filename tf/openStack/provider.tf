@@ -45,5 +45,3 @@ provider "openstack" {
   user_name = var.user_name
   password = var.password
 }
-
-

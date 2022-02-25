@@ -19,4 +19,3 @@ export TF_VAR_flavor_name="d2-8"
 # Set Instance Name
 
 export TF_VAR_instance_name="myfirstinstance"
-

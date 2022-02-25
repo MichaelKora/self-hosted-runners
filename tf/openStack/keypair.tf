@@ -1,11 +1,11 @@
-
 variable "keypair_name" {
     type        = string
 }
 
-resource "openstack_compute_keypair_v2" "libvirtbuilder" {
+resource "openstack_compute_keypair_v2" "githubrunner" {
+  count = var.server_count
   provider   = openstack
-  region     = var.region
+  region     = var.regions[ count.index ]
   name       = var.keypair_name
-  public_key = file("~/.ssh/id_rsa.pub")
+  public_key = file("../../id_rsa.pub")
 }

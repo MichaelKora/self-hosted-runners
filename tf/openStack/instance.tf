@@ -1,28 +1,37 @@
-variable "image_name" {
-    type        = string
+variable "flavor_names" {
+    type = list(string)
+    default = ["d2-4", "d2-2", "s1-2"]
 }
 
-variable "flavor_name" {
-    type        = string
+variable "image_names" {
+  type = list(string)
+  default = ["Ubuntu 21.10", "Ubuntu 21.04", "Ubuntu 20.04"]
 }
 
-variable "instance_name" {
-    type        = string
+variable "regions" {
+  type = list(string)
+  default = ["GRA9", "DE1", "GRA9"]
 }
 
 variable "ansible_user" {
     type        = string
 }
 
+variable "server_count" {
+  type = number
+  default = 3
+}
+
 resource "openstack_compute_instance_v2" osinstance {
-   name        = var.instance_name 
+   count = var.server_count
+   name        = "github-runner-${count.index}"
    provider    = openstack
-   region = var.region
-   image_name  = var.image_name
-   flavor_name = var.flavor_name
-   key_pair    = openstack_compute_keypair_v2.libvirtbuilder.name
+   region = var.regions[ count.index ]
+   image_name  = var.image_names[ count.index ]
+   flavor_name = var.flavor_names[ count.index ]
+   key_pair    = openstack_compute_keypair_v2.githubrunner.name
    network {
-    name      = "Ext-Net" 
+    name      = "Ext-Net"
    }
    metadata = {
      group = "openstack"

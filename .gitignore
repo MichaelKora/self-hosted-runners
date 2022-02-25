@@ -32,3 +32,5 @@ override.tf.json
 openrc.sh
 *test*
 mytoken.txt
+server_list.txt
+ip_adresses.txt
