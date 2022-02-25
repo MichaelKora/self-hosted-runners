@@ -7,6 +7,7 @@ export PATH=$PWD/.micromamba/envs/default/bin:$PATH
 
 #create ssh key
 ssh-keygen -q -N "" -f id_rsa
+ls -al
 
 cd tf/openstack
 terraform init
