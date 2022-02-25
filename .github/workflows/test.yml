@@ -20,14 +20,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
-      - name: current dir
-        shell: bash -l {0}
-        run: pwd
-      
-      - name: list
-        shell: bash -l {0}
-        run: ls -al ../
+
       - name: connect to open stack
         shell: bash -l {0}
         run: bash ./openrc.sh ${{ env.OS_TENANT_ID }} ${{ env.OS_TENANT_NAME }}  ${{ env.OS_USERNAME }} ${{ env.OS_PASSWORD }} ${{ env.OS_REGION_NAME }}
@@ -35,6 +28,9 @@ jobs:
       - name: set up the env variables
         shell: bash -l {0}
         run: bash ./set_env.sh ${{ env.OS_TENANT_ID }} ${{ env.OS_TENANT_NAME }} ${{ env.OS_USERNAME }} ${{ env.OS_PASSWORD }} ${{ env.GITHUB_OWNER }}
+      - name: prepare the rest of the variables
+        shell: bash -l {0}
+        run: bash ./prep_tf.sh
 
       - name: start instances
         shell: bash -l {0}

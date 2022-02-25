@@ -12,10 +12,7 @@ export TF_VAR_tenant_id=$OS_TENANT_ID
 
 
 # Set image + flavour
-export TF_VAR_ansible_user="debian"
-export TF_VAR_image_name="Debian 11"
-export TF_VAR_flavor_name="d2-8"
+#export TF_VAR_ansible_user="debian"
+#export TF_VAR_image_name="Debian 11"
+#export TF_VAR_flavor_name="d2-8"
 
-# Set Instance Name
-
-export TF_VAR_instance_name="myfirstinstance"

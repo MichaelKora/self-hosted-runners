@@ -22,3 +22,10 @@ echo export TF_VAR_tenant_id=$OS_TENANT_ID >> .env
 echo export TF_VAR_ansible_user=$6 >> .env
 
 source .env
+export TF_VAR_region="DE1"
+export TF_VAR_user_name=$OS_USERNAME
+export TF_VAR_password=$OS_PASSWORD
+export TF_VAR_user_domain_name=$OS_USER_DOMAIN_NAME
+export TF_VAR_tenant_name=$OS_TENANT_NAME
+export TF_VAR_tenant_id=$OS_TENANT_ID
+export TF_VAR_ansible_user=$6
