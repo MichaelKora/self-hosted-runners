@@ -23,7 +23,12 @@ jobs:
 
       - name: create instance and configure the runners
         shell: bash -l {0}
-        run: | 
+        run: |
+          sudo apt update
+          sudo apt install software-properties-common
+          sudo add-apt-repository --yes --update ppa:ansible/ansible
+          sudo apt install ansible
+
           source ./openrc.sh ${{ env.OS_TENANT_ID }} ${{ env.OS_TENANT_NAME }}  ${{ env.OS_USERNAME }} ${{ env.OS_PASSWORD }} ${{ env.OS_REGION_NAME }}
           bash ./set_env.sh ${{ env.OS_TENANT_ID }} ${{ env.OS_TENANT_NAME }} ${{ env.OS_USERNAME }} ${{ env.OS_PASSWORD }} ${{ env.GITHUB_OWNER }}
           source ./prep_tf.sh ${{ env.GITHUB_OWNER }}

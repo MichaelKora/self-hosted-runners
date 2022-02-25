@@ -29,7 +29,7 @@ resource "openstack_compute_instance_v2" osinstance {
    region = var.regions[ count.index ]
    image_name  = var.image_names[ count.index ]
    flavor_name = var.flavor_names[ count.index ]
-   key_pair    = openstack_compute_keypair_v2.githubrunner.name
+   key_pair    = openstack_compute_keypair_v2.githubrunner[count.index].name
    network {
     name      = "Ext-Net"
    }
