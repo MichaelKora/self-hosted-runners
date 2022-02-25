@@ -10,6 +10,7 @@ ssh-keygen -q -N "" -f id_rsa
 ls -al
 
 cd tf/openstack
+ls -al
 terraform init
 terraform plan
 terraform apply -auto-approve
