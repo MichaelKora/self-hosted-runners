@@ -25,5 +25,5 @@ jobs:
         run: bash ./openrc.sh ${{ env.OS_TENANT_ID }} ${{ env.OS_TENANT_NAME }}  ${{ env.OS_USERNAME }} ${{ env.OS_PASSWORD }} ${{ env.OS_REGION_NAME }}
 
       - name: delete vms
-        run: shell: bash -l {0}
+        shell: bash -l {0}
         run: bash ./destroyVMs.sh
