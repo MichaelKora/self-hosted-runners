@@ -10,13 +10,13 @@ jobs:
   get-runners-up-and-running:
     runs-on: ubuntu-latest
     env:
-    OS_TENANT_ID: ${{ secrets.OS_TENANT_ID }}
-    OS_TENANT_NAME: ${{ secrets.OS_TENANT_NAME }}
-    OS_USERNAME: ${{ secrets.OS_USERNAME }}
-    OS_PASSWORD: ${{ secrets.OS_PASSWORD }}
-    OS_REGION_NAME: ${{ secrets.OS_REGION_NAME }}
-    TF_VAR_ANSIBLE_USER: ${{ secrets.TF_VAR_ANSIBLE_USER }}
-    GITHUB_OWNER: ${{ github.actor }}
+      OS_TENANT_ID: ${{ secrets.OS_TENANT_ID }}
+      OS_TENANT_NAME: ${{ secrets.OS_TENANT_NAME }}
+      OS_USERNAME: ${{ secrets.OS_USERNAME }}
+      OS_PASSWORD: ${{ secrets.OS_PASSWORD }}
+      OS_REGION_NAME: ${{ secrets.OS_REGION_NAME }}
+      TF_VAR_ANSIBLE_USER: ${{ secrets.TF_VAR_ANSIBLE_USER }}
+      GITHUB_OWNER: ${{ github.actor }}
 
     steps:
       - name: connect to open stack
