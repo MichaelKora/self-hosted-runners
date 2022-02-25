@@ -12,5 +12,6 @@ echo export OS_TENANT_ID=$1 >> .env
 echo OS_TENANT_NAME=$2 >> .env
 echo export OS_USERNAME=$3 >> .env
 echo export OS_PASSWORD=$4 >> .env
-echo export TF_VAR_keypair_name= $5 >> .env
 source .env
+
+export TF_VAR_keypair_name= $5
