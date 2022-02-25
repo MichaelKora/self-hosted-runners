@@ -29,7 +29,6 @@ override.tf.json
 # example: *tfplan*
 .env
 *un~
-openrc.sh
 *test*
 mytoken.txt
 server_list.txt
