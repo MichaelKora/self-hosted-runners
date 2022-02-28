@@ -1,0 +1,20 @@
+# Micromamba environment file
+# https://marketplace.visualstudio.com/items?itemName=corker.vscode-micromamba
+
+name: default
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.9
+  - ansible
+  - terraform
+  - certbot
+  - vault
+  - python-openstackclient
+  - gh
+  - pip:
+    - ovh
+    - certbot-dns-ovh
+

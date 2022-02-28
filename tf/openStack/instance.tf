@@ -9,7 +9,7 @@ variable "image_names" {
 }
 
 variable "region" {
-  type = list(string)
+  type = string
   default = "DE1"
  // default = ["GRA9", "DE1", "GRA9"]
 }
