@@ -3,27 +3,27 @@
   become: yes
   tasks:
     - name: Create a folder
-        command: mkdir actions-runner && cd actions-runner
+      command: mkdir actions-runner && cd actions-runner
     - name: Download the latest runner package
-        command: curl -o actions-runner-linux-x64-2.287.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.287.1/actions-runner-linux-x64-2.287.1.tar.gz
+      command: curl -o actions-runner-linux-x64-2.287.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.287.1/actions-runner-linux-x64-2.287.1.tar.gz
     
     - name: Validate the hash
-        command: echo "8fa64384d6fdb764797503cf9885e01273179079cf837bfc2b298b1a8fd01d52  actions-runner-linux-x64-2.287.1.tar.gz" | shasum -a 256 -c
+      command: echo "8fa64384d6fdb764797503cf9885e01273179079cf837bfc2b298b1a8fd01d52  actions-runner-linux-x64-2.287.1.tar.gz" | shasum -a 256 -c
     - name: Extract the installer
-        command: tar xzf ./actions-runner-linux-x64-2.287.1.tar.gz
+      command: tar xzf ./actions-runner-linux-x64-2.287.1.tar.gz
   
     - name: Create the runner and start the configuration experience
-        command: ./config.sh --url https://github.com/MichaelKora/mongoDB-benchmark --token ATILRBWMOQ45Y44JVRHZEQ3CDDLD2
+      command: ./config.sh --url https://github.com/MichaelKora/mongoDB-benchmark --token ATILRBWMOQ45Y44JVRHZEQ3CDDLD2
   
     - name: start the runner services
-        command: ./run.sh
+      command: ./run.sh
   
 - name: Add label to first runner
   hosts: runner-1
   become: yes
   tasks:
     - name: Create a folder
-        command: ./config.sh --labels linux,x64,runner1
+      command: ./config.sh --labels linux,x64,runner1
 
   
 - name: Add label to second runner
@@ -31,11 +31,11 @@
   become: yes
   tasks:
     - name: Create a folder
-        command: ./config.sh --labels linux,x64,runner2
+      command: ./config.sh --labels linux,x64,runner2
   
 - name: Add label to third runner
   hosts: runner-3
   become: yes
   tasks:
     - name: Create a folder
-        command: ./config.sh --labels linux,x64,runner3
+      command: ./config.sh --labels linux,x64,runner3
