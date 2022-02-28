@@ -28,4 +28,6 @@ def get_all_ids(fileName, name_pattern):
 res_ids = get_all_ids("server_list.txt","github-runner")
 
 for id in res_ids:
-    subprocess.run(f"openstack server delete {id}", shell=True)
+    cmd = f"openstack server delete {id}"
+    print (cmd)
+    subprocess.run(cmd , shell=True)
