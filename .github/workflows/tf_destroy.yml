@@ -1,11 +1,11 @@
 name: destroy created instances
 
 # Only trigger, when the build workflow succeeded
-on:
-  workflow_run:
-    workflows: ["self hosted runner"]
-    types:
-      - completed
+#on:
+#  workflow_run:
+#    workflows: ["self hosted runner"]
+#    types:
+#      - completed
 
 jobs:
   notify:
