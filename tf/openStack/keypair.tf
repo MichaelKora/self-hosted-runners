@@ -3,9 +3,8 @@ variable "keypair_name" {
 }
 
 resource "openstack_compute_keypair_v2" "githubrunner" {
-  count = var.server_count
   provider   = openstack
   region     = var.region
-  name       = "${var.keypair_name}-${count.index}"
+  name       = "${var.keypair_name}-00"
   public_key = file("../../id_rsa.pub")
 }

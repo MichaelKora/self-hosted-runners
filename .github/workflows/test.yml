@@ -20,10 +20,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: install mamba
+        uses: mamba-org/provision-with-micromamba@main
+
       - name: create instance and configure the runners
         shell: bash -l {0}
         run: |
-          bash ./mamba_env.sh
           sudo chmod 777 /etc/ansible/hosts          
 
           
