@@ -1,7 +1,8 @@
 #!/bin/bash
-ls /etc/
+echo "ruuuuuun"
+ls -al /etc/
 file="ip_adresses.txt"
-touch /etc/ansible/hosts
+sudo touch /etc/ansible/hosts
 chmod 777 /etc/ansible/hosts
 echo "[myrunners]" >> /etc/ansible/hosts
 while IFS= read -r line; do
