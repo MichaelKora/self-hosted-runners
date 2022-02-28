@@ -1,4 +1,5 @@
 #!/bin/bash
+ls /etc/
 file="ip_adresses.txt"
 chmod 777 /etc/ansible/hosts
 echo "[myrunners]" >> /etc/ansible/hosts
