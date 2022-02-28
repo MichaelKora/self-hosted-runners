@@ -3,9 +3,15 @@
 #wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
 #./bin/micromamba create --file environment.yml --yes -r $PWD/.micromamba
 #export PATH=$PWD/.micromamba/envs/default/bin:$PATH
+openstack server delete github-runner-0
+openstack server delete github-runner-0
+openstack server delete github-runner-0
+openstack server delete github-runner-0
+openstack server delete github-runner-0
+openstack server delete github-runner-0
 
-ssh-keygen -q -N "" -f id_rsa
+#ssh-keygen -q -N "" -f id_rsa
 
-cd tf/openStack
-terraform init
-terraform destroy
+#cd tf/openStack
+#terraform init
+#terraform destroy
