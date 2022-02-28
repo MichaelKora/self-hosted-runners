@@ -1,0 +1,6 @@
+[runner-1]
+123.423.2.1 ansible_ssh_user=Michael
+[runner-2]
+321.23.243 ansible_ssh_user=Michael
+[runner-3]
+233.524.4.3 ansible_ssh_user=Michael

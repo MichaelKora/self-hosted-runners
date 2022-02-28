@@ -20,5 +20,6 @@ while IFS= read -r line; do
   count=$count+1
 done < "$file"
 
+cat /etc/ansible/hosts
 #run the playbook
 ansible-playbook playbook.yml

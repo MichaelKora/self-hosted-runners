@@ -25,6 +25,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: install mamba
+        uses: mamba-org/provision-with-micromamba@main
       
       - name: connect to open stack
         shell: bash -l {0}

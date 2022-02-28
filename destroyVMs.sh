@@ -5,6 +5,6 @@
 #export PATH=$PWD/.micromamba/envs/default/bin:$PATH
 
 
-cd tf/openstack
+cd tf/openStack
 terraform init
 terraform destroy

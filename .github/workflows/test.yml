@@ -2,7 +2,7 @@ name: self hosted runner
 
 on:
   workflow_dispatch:
-  push:
+  pull-request:
     branches:
       - main
 
@@ -31,7 +31,7 @@ jobs:
           source ./prep_tf.sh ${{ env.GITHUB_OWNER }}
           
           openstack keypair delete ${{ env.GITHUB_OWNER }}-00
-                    
+
           bash ./start_instances.sh
           python setup.py
           bash ./run.sh ${{ env.GITHUB_OWNER }}
