@@ -31,9 +31,9 @@ variable "password" {
     sensitive = true
 }
 
-variable "region" {
-    type        = string
-}
+//variable "region" {
+//    type        = string
+//}
 
 
 provider "openstack" {

@@ -1,6 +1,6 @@
 #!/bin/bash
 file="ip_adresses.txt"
-
+chmod 777 /etc/ansible/hosts
 echo "[myrunners]" >> /etc/ansible/hosts
 while IFS= read -r line; do
   echo "$line ansible_ssh_user=$1" >> /etc/ansible/hosts

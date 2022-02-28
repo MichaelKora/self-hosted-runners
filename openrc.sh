@@ -26,7 +26,7 @@ export OS_PASSWORD=$4
 
 # If your configuration has multiple regions, we set that information here.
 # OS_REGION_NAME is optional and only valid in certain environments.
-export OS_REGION_NAME=$5
+#export OS_REGION_NAME=$5
 
 # Don't leave a blank variable, unset it if it was empty
 if [ -z "$OS_REGION_NAME" ]; then unset OS_REGION_NAME; fi
