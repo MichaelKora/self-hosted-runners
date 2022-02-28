@@ -8,9 +8,10 @@ variable "image_names" {
   default = ["Ubuntu 21.10", "Ubuntu 21.04", "Ubuntu 20.04"]
 }
 
-variable "regions" {
+variable "region" {
   type = list(string)
-  default = ["GRA9", "DE1", "GRA9"]
+  default = "DE1"
+ // default = ["GRA9", "DE1", "GRA9"]
 }
 
 variable "ansible_user" {
@@ -26,7 +27,7 @@ resource "openstack_compute_instance_v2" osinstance {
    count = var.server_count
    name        = "github-runner-${count.index}"
    provider    = openstack
-   region = var.regions[ count.index ]
+   region = var.region
    image_name  = var.image_names[ count.index ]
    flavor_name = var.flavor_names[ count.index ]
    key_pair    = openstack_compute_keypair_v2.githubrunner[count.index].name

@@ -5,7 +5,7 @@ variable "keypair_name" {
 resource "openstack_compute_keypair_v2" "githubrunner" {
   count = var.server_count
   provider   = openstack
-  region     = var.regions[ count.index ]
+  region     = var.region
   name       = "${var.keypair_name}-${count.index}"
   public_key = file("../../id_rsa.pub")
 }
