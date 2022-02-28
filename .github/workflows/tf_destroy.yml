@@ -1,5 +1,9 @@
 name: destroy created instances
 
+on:
+  push:
+    branches:
+      - main
 # Only trigger, when the build workflow succeeded
 #on:
 #  workflow_run:
