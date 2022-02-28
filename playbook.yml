@@ -27,7 +27,7 @@
         ./config.sh --labels linux,x64,runner1
         ./run.sh
 
-  
+
 - name: Add label to second runner
   hosts: runner-2
   become: yes
