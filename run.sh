@@ -8,7 +8,7 @@ while IFS= read -r line; do
 done < "$file"
 
 
-count=1
+declare -i count=1
 while IFS= read -r line; do
   echo "[runner-$count]" >> ./inventory_file
   echo "$line ansible_ssh_user=$1" >> ./inventory_file
