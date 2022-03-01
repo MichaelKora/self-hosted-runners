@@ -1,6 +1,5 @@
 import subprocess
 
-
 def extractId(str_line):
     current_id = str_line.rsplit("|")[1]
     return current_id
