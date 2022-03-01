@@ -4,9 +4,12 @@
 #./bin/micromamba create --file environment.yml --yes -r $PWD/.micromamba
 #export PATH=$PWD/.micromamba/envs/default/bin:$PATH
 echo "delete scripts"
-#openstack server list > server_list.txt
+openstack server list > server_list.txt
 
 python delete.py
+
+echo "after delete"
+openstack server list
 
 #openstack server delete github-runner-0
 #ssh-keygen -q -N "" -f id_rsa
