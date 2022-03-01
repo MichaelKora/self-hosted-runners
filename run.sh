@@ -21,7 +21,7 @@
 echo "ansible commands ... "
 
 #show ansibe terraform inventory
-ansible-inventory -vvv --list
+ansible-inventory --list
 
 #run the playbook
-ansible-playbook -vvv playbook.yml
+ansible-playbook playbook.yml
