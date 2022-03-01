@@ -6,8 +6,6 @@ from http import HTTPStatus
 from sys import set_coroutine_origin_tracking_depth
 from unittest import runner
 
-from numpy import tri
-
 __metaclass__ = type
 
 DOCUMENTATION = r"""
