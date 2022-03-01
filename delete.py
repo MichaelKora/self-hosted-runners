@@ -23,7 +23,6 @@ def get_all_ids(fileName, name_pattern):
     file.close()
     return all_ids
 
-
 res_ids = get_all_ids("server_list.txt","github-runner")
 
 for id in res_ids:
