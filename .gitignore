@@ -5,6 +5,14 @@
 *.tfstate
 *.tfstate.*
 
+# Terraform
+**/.terraform
+**/.terraform.lock.hcl
+**/terraform.tfstate
+**/terraform.tfstate.backup
+**/.terraform.tfstate.lock.info
+
+
 
 # Crash log files
 crash.log
@@ -33,3 +41,25 @@ override.tf.json
 mytoken.txt
 server_list.txt
 ip_adresses.txt
+
+# Binaries
+bin
+
+# Micromamba
+.micromamba
+
+# Secrets
+.secrets
+
+# Certbot
+.certbot
+
+# ENV
+.env
+
+# SSH
+id_rsa
+id_rsa.pub
+
+# Python
+***.pyc

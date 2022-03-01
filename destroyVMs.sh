@@ -6,9 +6,9 @@
 echo "delete scripts"
 #openstack server list > server_list.txt
 
-#python delete.py
+python delete.py
 
-openstack server delete github-runner-0
+#openstack server delete github-runner-0
 #ssh-keygen -q -N "" -f id_rsa
 
 #cd tf/openStack
