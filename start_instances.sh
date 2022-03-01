@@ -15,5 +15,3 @@ cd ../..
 # store list of vm in a text file
 openstack server list > server_list.txt
 cat server_list.txt
-
-
