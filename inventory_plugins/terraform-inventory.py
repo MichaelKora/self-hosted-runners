@@ -38,6 +38,7 @@ class InventoryModule(BaseInventoryPlugin):
             valid = True
         return valid
 
+
     def parse(self, inventory, loader, path, cache):
         """Return dynamic inventory from source """
         super(InventoryModule, self).parse(inventory, loader, path, cache)
