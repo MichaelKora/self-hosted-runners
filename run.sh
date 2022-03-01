@@ -17,8 +17,11 @@
 
 #cat ./inventory_file
 
-#Show ansibe terraform inventory
-ansible-inventory --list
+
+echo "ansible commands ... "
+
+#show ansibe terraform inventory
+ansible-inventory -vvv --list
 
 #run the playbook
-ansible-playbook playbook.yml
+ansible-playbook -vvv playbook.yml
