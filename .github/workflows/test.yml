@@ -22,7 +22,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: install mamba
         uses: mamba-org/provision-with-micromamba@main
-
       - name: create instance and configure the runners
         shell: bash -l {0}
         run: |
@@ -33,7 +32,6 @@ jobs:
           openstack keypair delete ${{ env.GITHUB_OWNER }}-00
 
           bash ./start_instances.sh
-#          python setup.py
           bash ./run.sh ${{ env.GITHUB_OWNER }}
 
   test1:
