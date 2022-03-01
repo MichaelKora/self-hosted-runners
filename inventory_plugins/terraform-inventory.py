@@ -33,7 +33,7 @@ class InventoryModule(BaseInventoryPlugin):
 
     def verify_file(self, path):
         """Return true/false if this is possibly a valid file for this plugin to consume"""
-        valid = False
+        valid = True
         if super(InventoryModule, self).verify_file(path):
             valid = True
         return valid
