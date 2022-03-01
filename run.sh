@@ -17,4 +17,4 @@ done < "$file"
 
 cat ./inventory_file
 #run the playbook
-ansible-playbook -i inventory_file playbook.yml
+ansible-playbook playbook.yml
