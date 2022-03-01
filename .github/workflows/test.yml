@@ -33,7 +33,7 @@ jobs:
           openstack keypair delete ${{ env.GITHUB_OWNER }}-00
 
           bash ./start_instances.sh
-          python setup.py
+#          python setup.py
           bash ./run.sh ${{ env.GITHUB_OWNER }}
 
   test1:
