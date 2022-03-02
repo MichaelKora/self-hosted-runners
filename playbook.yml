@@ -1,6 +1,6 @@
 - name: Configure Servers as github Runners
   hosts: myrunners
-  become: yes
+#  become: yes
   tasks:
     - name: Create a folder
       command: |
@@ -15,13 +15,7 @@
       command: tar xzf ./actions-runner-linux-x64-2.287.1.tar.gz
   
     - name: activate the runner
-      command: |
-        cat > .env <<'EOF'
-        export AGENT_ALLOW_RUNASROOT="1"
-        EOF
-        source .env
-
-        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBXUV57JXEKLLNW5SY3CDTXBC
+      command: ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBXUV57JXEKLLNW5SY3CDTXBC
   
 #    - name: start the runner services
 #      command: ./run.sh
