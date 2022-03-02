@@ -130,4 +130,5 @@ class InventoryModule(BaseInventoryPlugin):
 #                                        host, metadata, a["all_metadata"][metadata]
 #                                    )
 #ssh-import-id-gh michaelkora
+#ssh-import-id-gh m.koras@campus.tu-berlin.de
 #ssh ubuntu@123.123.123
