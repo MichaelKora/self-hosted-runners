@@ -15,7 +15,7 @@
       command: tar xzf ./actions-runner-linux-x64-2.287.1.tar.gz
   
     - name: Create the runner and start the configuration experience
-      command: ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBXUV57JXEKLLNW5SY3CDTXBC
+      command: RUNNER_ALLOW_RUNASROOT="1"  ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBXUV57JXEKLLNW5SY3CDTXBC
   
 #    - name: start the runner services
 #      command: ./run.sh
