@@ -1,6 +1,3 @@
-from re import I
-
-
 def extractIp(str_line):
     networkPart = str_line.rsplit("|")[4]
     extIp_part = networkPart.rsplit(",")[0]
