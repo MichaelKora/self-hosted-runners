@@ -41,8 +41,9 @@
 - name: Configure with svc.sh
   hosts: myrunners
   become: yes
+  become_user: ubuntu
   tasks:
     - name: ./svc.sh install && ./svc.sh start
       command: |
-        ./svc.sh install
-        ./svc.sh start
+        sudo ./svc.sh install
+        sudo ./svc.sh start

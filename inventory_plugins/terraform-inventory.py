@@ -73,11 +73,11 @@ class InventoryModule(BaseInventoryPlugin):
                             ansible_host = a["access_ip_v4"]
 
                             runners_gpe = "myrunners"
-                            if "0" in host:
+                            if "runner-1" in host:
                                 newGrp = "runner-1"
-                            elif "1" in host:
+                            elif "runner-2" in host:
                                 newGrp = "runner-2"
-                            elif "2" in host:
+                            elif "runner-3" in host:
                                 newGrp = "runner-3"
 
                             if runners_gpe not in all_gps:
@@ -118,15 +118,17 @@ class InventoryModule(BaseInventoryPlugin):
                                         host, metadata, a["all_metadata"][metadata]
                                     )
 
-                            elif ansible_host not in all_gps[newGrp]:
-                                all_gps[newGrp] = ansible_host
-
-                                self.inventory.add_host(host=host, group=newGrp)
-                                self.inventory.set_variable(
-                                    host, "ansible_host", ansible_host
-                                )
-
-                                for metadata in a["all_metadata"]:
-                                    self.inventory.set_variable(
-                                        host, metadata, a["all_metadata"][metadata]
-                                    )
+#                            elif ansible_host not in all_gps[newGrp]:
+#                                all_gps[newGrp] = ansible_host
+#
+#                                self.inventory.add_host(host=host, group=newGrp)
+#                                self.inventory.set_variable(
+#                                    host, "ansible_host", ansible_host
+#                                )
+#
+#                                for metadata in a["all_metadata"]:
+#                                    self.inventory.set_variable(
+#                                        host, metadata, a["all_metadata"][metadata]
+#                                    )
+#ssh-import-id-gh michaelkora
+#ssh ubuntu@123.123.123
