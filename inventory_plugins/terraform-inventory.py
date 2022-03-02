@@ -117,7 +117,6 @@ class InventoryModule(BaseInventoryPlugin):
                                     self.inventory.set_variable(
                                         host, metadata, a["all_metadata"][metadata]
                                     )
-
 #                            elif ansible_host not in all_gps[newGrp]:
 #                                all_gps[newGrp] = ansible_host
 #
