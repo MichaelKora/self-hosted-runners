@@ -20,7 +20,7 @@
     - name: Configure and start the runner1
       command: |
         ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBSPILK2QFXYOM3JA6TCD673O --labels linux,x64,runner1 --name myrunner1 --unattended --ephemeral
-        ./run.sh
+    
 
 - name: Activate and test the  second runner
   hosts: runner-2
@@ -29,7 +29,6 @@
     - name: Configure and start the runner2
       command: |
         ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBSPILK2QFXYOM3JA6TCD673O --labels linux,x64,runner2 --name myrunner2 --unattended --ephemeral
-        ./run.sh
   
 - name: Activate and test the  the runner3
   hosts: runner-3
@@ -37,5 +36,13 @@
   tasks:
     - name: Create a folder
       command: |
-        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBSPILK2QFXYOM3JA6TCD673O --labels linux,x64,runner3 --name myrunner3 --unattended --ephemeral
-        ./run.sh
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBTZYWDJLHWBCHEXXITCD7EHY --labels linux,x64,runner3 --name myrunner3 --unattended --ephemeral
+
+- name: Configure with svc.sh
+  hosts: myrunners
+  become: yes
+  tasks:
+    - name: ./svc.sh install && ./svc.sh start
+      command: |
+        sudo ./svc.sh install
+        sudo ./svc.sh start
