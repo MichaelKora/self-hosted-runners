@@ -4,7 +4,7 @@
 #create ssh key
 ssh-keygen -q -N "" -f id_rsa
 
-cd tf/openStack
+cd tf/openstack
 terraform init
 terraform plan
 terraform apply -auto-approve
