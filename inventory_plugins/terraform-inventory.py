@@ -58,6 +58,8 @@ class InventoryModule(BaseInventoryPlugin):
         )
         tfstate = json.loads(tfstate_cmd.stdout)
 
+        print(tfstate)
+
         all_gps = {}
 
         for r in tfstate["resources"]:
