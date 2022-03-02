@@ -10,4 +10,3 @@ export TF_VAR_tenant_name=$OS_TENANT_NAME
 export TF_VAR_tenant_id=$OS_TENANT_ID
 export TF_VAR_ansible_user="ubuntu"
 #export TF_VAR_region="DE1"
-export TF_VAR_ansible_user=$1
