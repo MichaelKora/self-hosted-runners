@@ -15,7 +15,7 @@
     
 - name: Activate and test the first runner
   hosts: runner-1
-  become: yes
+#  become: yes
   tasks:
     - name: Configure and start the runner1
       command: |
@@ -24,7 +24,7 @@
 
 - name: Activate and test the  second runner
   hosts: runner-2
-  become: yes
+#  become: yes
   tasks:
     - name: Configure and start the runner2
       command: |
@@ -33,7 +33,7 @@
   
 - name: Activate and test the  the runner3
   hosts: runner-3
-  become: yes
+#  become: yes
   tasks:
     - name: Create a folder
       command: |
