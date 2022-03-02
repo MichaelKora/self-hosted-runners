@@ -8,12 +8,16 @@
       command: |
         mkdir -p actions-runner
         cd actions-runner
-    - name: Download the latest runner package
-      command: curl -o actions-runner-linux-x64-2.287.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.287.1/actions-runner-linux-x64-2.287.1.tar.gz
-    - name: Validate the hash
-      command: echo "8fa64384d6fdb764797503cf9885e01273179079cf837bfc2b298b1a8fd01d52  actions-runner-linux-x64-2.287.1.tar.gz" | shasum -a 256 -c
-    - name: Extract the installer
-      command: tar xzf ./actions-runner-linux-x64-2.287.1.tar.gz
+        curl -o actions-runner-linux-x64-2.287.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.287.1/actions-runner-linux-x64-2.287.1.tar.gz
+        echo "8fa64384d6fdb764797503cf9885e01273179079cf837bfc2b298b1a8fd01d52  actions-runner-linux-x64-2.287.1.tar.gz" | shasum -a 256 -c
+        tar xzf ./actions-runner-linux-x64-2.287.1.tar.gz
+
+#    - name: Download the latest runner package
+#      command: curl -o actions-runner-linux-x64-2.287.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.287.1/actions-runner-linux-x64-2.287.1.tar.gz
+#    - name: Validate the hash
+#      command: echo "8fa64384d6fdb764797503cf9885e01273179079cf837bfc2b298b1a8fd01d52  actions-runner-linux-x64-2.287.1.tar.gz" | shasum -a 256 -c
+#    - name: Extract the installer
+#      command: tar xzf ./actions-runner-linux-x64-2.287.1.tar.gz
     
 - name: Activate and test the first runner
   hosts: runner-1
@@ -41,10 +45,10 @@
 
 - name: Configure with svc.sh
   hosts: myrunners
-  become: yes
-  become_user: ubuntu
+#  become: yes
+#  become_user: ubuntu
   tasks:
     - name: ./svc.sh install && ./svc.sh start
       command: |
-        sudo ./svc.sh install
-        sudo ./svc.sh start
+        sudo ~/svc.sh install
+        sudo ~/svc.sh start

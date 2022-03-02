@@ -132,3 +132,4 @@ class InventoryModule(BaseInventoryPlugin):
 #ssh-import-id-gh michaelkora
 #ssh-import-id-gh m.koras@campus.tu-berlin.de
 #ssh ubuntu@123.123.123
+#ssh ubuntu@141.95.110.189
