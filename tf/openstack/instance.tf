@@ -25,7 +25,7 @@ variable "server_count" {
 
 resource "openstack_compute_instance_v2" osinstance {
    count = var.server_count
-   name        = "github-runner-${count.index}"
+   name        = "github-runner-${count.index+1}"
    provider    = openstack
    region = var.region
    image_name  = var.image_names[ count.index ]

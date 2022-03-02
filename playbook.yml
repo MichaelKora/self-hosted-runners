@@ -44,5 +44,5 @@
   tasks:
     - name: ./svc.sh install && ./svc.sh start
       command: |
-        sudo ./svc.sh install
-        sudo ./svc.sh start
+        ./svc.sh install
+        ./svc.sh start
