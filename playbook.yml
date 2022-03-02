@@ -11,39 +11,37 @@
     
     - name: Validate the hash
       command: echo "8fa64384d6fdb764797503cf9885e01273179079cf837bfc2b298b1a8fd01d52  actions-runner-linux-x64-2.287.1.tar.gz" | shasum -a 256 -c
+
     - name: Extract the installer
       command: tar xzf ./actions-runner-linux-x64-2.287.1.tar.gz
-  
-    - name: activate the runner
-      command: ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBXUV57JXEKLLNW5SY3CDTXBC
   
 #    - name: start the runner services
 #      command: ./run.sh
   
-- name: Add label to first runner
+- name: Activate and test the first runner
   hosts: runner-1
   become: yes
   tasks:
     - name: Configure and start the runner1
       command: |
-        ./config.sh --labels linux,x64,runner1
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBVSTHBDTOVUORXZ6UTCD6XIQ --labels linux,x64,runner1 --name myrunner1 --unattended
         ./run.sh
 
 
-- name: Add label to second runner
+- name: Activate and test the  second runner
   hosts: runner-2
   become: yes
   tasks:
     - name: Configure and start the runner2
       command: |
-        ./config.sh --labels linux,x64,runner2
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBVSTHBDTOVUORXZ6UTCD6XIQ --labels linux,x64,runner2 --name myrunner2 --unattended
         ./run.sh
   
-- name: Configure and start the runner3
+- name: Activate and test the  the runner3
   hosts: runner-3
   become: yes
   tasks:
     - name: Create a folder
       command: |
-        ./config.sh --labels linux,x64,runner3
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBVSTHBDTOVUORXZ6UTCD6XIQ --labels linux,x64,runner§ --name myrunner3 --unattended
         ./run.sh
