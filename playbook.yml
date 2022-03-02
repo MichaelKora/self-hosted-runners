@@ -13,7 +13,7 @@
     - name: Extract the installer
       command: tar xzf ./actions-runner-linux-x64-2.287.1.tar.gz
     - name: copy ssh key for test purposes
-      command: ssh-import-id-gh m.koras@campus.tu-berlin.de
+      command: ssh-import-id-gh MichaelKora
     
 - name: Activate and test the first runner
   hosts: runner-1
