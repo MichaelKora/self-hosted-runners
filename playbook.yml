@@ -19,7 +19,7 @@
   tasks:
     - name: Configure and start the runner1
       command: |
-        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBSKEBOLUQIHVQBVNFDCD62FW --labels linux,x64,runner1 --name myrunner1 --unattended
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBV3YNOG6PWQD3K55XLCD64KA --labels linux,x64,runner1 --name myrunner1 --unattended
         ./run.sh
 
 - name: Activate and test the  second runner
@@ -28,7 +28,7 @@
   tasks:
     - name: Configure and start the runner2
       command: |
-        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBSKEBOLUQIHVQBVNFDCD62FW --labels linux,x64,runner2 --name myrunner2 --unattended
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBV3YNOG6PWQD3K55XLCD64KA --labels linux,x64,runner2 --name myrunner2 --unattended
         ./run.sh
   
 - name: Activate and test the  the runner3
@@ -37,5 +37,5 @@
   tasks:
     - name: Create a folder
       command: |
-        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBSKEBOLUQIHVQBVNFDCD62FW --labels linux,x64,runner3 --name myrunner3 --unattended
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBV3YNOG6PWQD3K55XLCD64KA --labels linux,x64,runner3 --name myrunner3 --unattended
         ./run.sh
