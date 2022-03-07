@@ -117,18 +117,6 @@ class InventoryModule(BaseInventoryPlugin):
                                     self.inventory.set_variable(
                                         host, metadata, a["all_metadata"][metadata]
                                     )
-#                            elif ansible_host not in all_gps[newGrp]:
-#                                all_gps[newGrp] = ansible_host
-#
-#                                self.inventory.add_host(host=host, group=newGrp)
-#                                self.inventory.set_variable(
-#                                    host, "ansible_host", ansible_host
-#                                )
-#
-#                                for metadata in a["all_metadata"]:
-#                                    self.inventory.set_variable(
-#                                        host, metadata, a["all_metadata"][metadata]
-#                                    )
 #ssh-import-id-gh michaelkora
 #ssh-import-id-gh m.koras@campus.tu-berlin.de
 #ssh ubuntu@123.123.123
