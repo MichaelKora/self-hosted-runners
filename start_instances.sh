@@ -12,3 +12,5 @@ terraform state pull >> result.txt
 cat result.txt
 
 cd ../..
+
+sleep 90
