@@ -16,19 +16,25 @@
   hosts: runner-1
   tasks:
     - name: Configure and start the runner1
-      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBTWY63ELJG3XJN72GLCEYZQ4 --labels linux,x64,runner1 --name myrunner1 --unattended --ephemeral
+      shell: |
+        cd ./actions-runner
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBR2GJKXDD44WLHHTB3CEY524 --labels linux,x64,runner1 --name myrunner1 --unattended --ephemeral
 
 - name: Activate and test the  second runner
   hosts: runner-2
   tasks:
     - name: Configure and start the runner2
-      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBTWY63ELJG3XJN72GLCEYZQ4 --labels linux,x64,runner2 --name myrunner2 --unattended --ephemeral
+      shell: |
+        cd ./actions-runner
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBR2GJKXDD44WLHHTB3CEY524 --labels linux,x64,runner2 --name myrunner2 --unattended --ephemeral
   
 - name: Activate and test the  the runner3
   hosts: runner-3
   tasks:
     - name: Configure and start the runner3
-      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBTWY63ELJG3XJN72GLCEYZQ4 --labels linux,x64,runner3 --name myrunner3 --unattended --ephemeral
+      shell: |
+        cd ./actions-runner
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBR2GJKXDD44WLHHTB3CEY524 --labels linux,x64,runner3 --name myrunner3 --unattended --ephemeral
 
 
 - name: Configure with svc.sh
@@ -37,6 +43,6 @@
   become_user: ubuntu
   tasks:
     - name: ./svc.sh install && ./svc.sh start
-      command: |
+      shell: |
         sudo ./actions-runner/svc.sh install
         sudo ./actions-runner/svc.sh start
