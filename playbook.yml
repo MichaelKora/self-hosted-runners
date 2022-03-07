@@ -16,19 +16,19 @@
   hosts: runner-1
   tasks:
     - name: Configure and start the runner1
-      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBW5F5JAB3JUK4ELMGDCEYMXM --labels linux,x64,runner1 --name myrunner1 --unattended --ephemeral
+      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBQP2GL5QA3H6HO55YDCEYVJ6 --labels linux,x64,runner1 --name myrunner1 --unattended --ephemeral
 
 - name: Activate and test the  second runner
   hosts: runner-2
   tasks:
     - name: Configure and start the runner2
-      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBW5F5JAB3JUK4ELMGDCEYMXM --labels linux,x64,runner2 --name myrunner2 --unattended --ephemeral
+      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBQP2GL5QA3H6HO55YDCEYVJ6 --labels linux,x64,runner2 --name myrunner2 --unattended --ephemeral
   
 - name: Activate and test the  the runner3
   hosts: runner-3
   tasks:
     - name: Create a folder
-      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBW5F5JAB3JUK4ELMGDCEYMXM --labels linux,x64,runner3 --name myrunner3 --unattended --ephemeral
+      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBQP2GL5QA3H6HO55YDCEYVJ6 --labels linux,x64,runner3 --name myrunner3 --unattended --ephemeral
 
 - name: Configure with svc.sh
   hosts: myrunners
