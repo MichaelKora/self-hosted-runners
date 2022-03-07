@@ -1,0 +1,294 @@
+{
+  "version": 4,
+  "terraform_version": "1.1.3",
+  "serial": 1,
+  "lineage": "55c43402-cde8-a9fc-088f-56af8ba826c9",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "openstack_compute_instance_v2",
+      "name": "osinstance",
+      "provider": "provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]",
+      "instances": []
+    }
+  ]
+}
+
+{
+  "version": 4,
+  "terraform_version": "1.1.3",
+  "serial": 1,
+  "lineage": "55c43402-cde8-a9fc-088f-56af8ba826c9",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "openstack_compute_instance_v2",
+      "name": "osinstance",
+      "provider": "provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]",
+      "instances": []
+    }
+  ]
+}
+
+{
+  "version": 4,
+  "terraform_version": "1.1.3",
+  "serial": 1,
+  "lineage": "55c43402-cde8-a9fc-088f-56af8ba826c9",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "openstack_compute_instance_v2",
+      "name": "osinstance",
+      "provider": "provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]",
+      "instances": []
+    }
+  ]
+}
+
+{
+  "version": 4,
+  "terraform_version": "1.1.3",
+  "serial": 1,
+  "lineage": "55c43402-cde8-a9fc-088f-56af8ba826c9",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "openstack_compute_instance_v2",
+      "name": "osinstance",
+      "provider": "provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]",
+      "instances": []
+    }
+  ]
+}
+
+{
+  "version": 4,
+  "terraform_version": "1.1.3",
+  "serial": 6,
+  "lineage": "55c43402-cde8-a9fc-088f-56af8ba826c9",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "openstack_compute_instance_v2",
+      "name": "osinstance",
+      "provider": "provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "access_ip_v4": "141.95.108.95",
+            "access_ip_v6": "[2001:41d0:701:1000::2b]",
+            "admin_pass": null,
+            "all_metadata": {
+              "ansible_user": "ubuntu",
+              "group": "openstack"
+            },
+            "all_tags": [],
+            "availability_zone": "nova",
+            "availability_zone_hints": null,
+            "block_device": [],
+            "config_drive": null,
+            "flavor_id": "6c693dba-c8e8-4ead-a095-46425b43dc0f",
+            "flavor_name": "d2-4",
+            "floating_ip": null,
+            "force_delete": false,
+            "id": "5040182e-61df-45e8-a2c7-ba72d7b51002",
+            "image_id": "e9f68b2d-3a89-45fe-a4f7-1f2475a2865f",
+            "image_name": "Ubuntu 21.10",
+            "key_pair": "MichaelKora--0-00",
+            "metadata": {
+              "ansible_user": "ubuntu",
+              "group": "openstack"
+            },
+            "name": "github-runner-1",
+            "network": [
+              {
+                "access_network": false,
+                "fixed_ip_v4": "141.95.108.95",
+                "fixed_ip_v6": "[2001:41d0:701:1000::2b]",
+                "floating_ip": "",
+                "mac": "fa:16:3e:0c:01:78",
+                "name": "Ext-Net",
+                "port": "",
+                "uuid": "ed0ab0c6-93ee-44f8-870b-d103065b1b34"
+              }
+            ],
+            "network_mode": null,
+            "personality": [],
+            "power_state": "active",
+            "region": "DE1",
+            "scheduler_hints": [],
+            "security_groups": [
+              "default"
+            ],
+            "stop_before_destroy": false,
+            "tags": null,
+            "timeouts": null,
+            "user_data": null,
+            "vendor_options": [],
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInVwZGF0ZSI6MTgwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "openstack_compute_keypair_v2.githubrunner"
+          ]
+        },
+        {
+          "index_key": 1,
+          "schema_version": 0,
+          "attributes": {
+            "access_ip_v4": "141.95.110.177",
+            "access_ip_v6": "[2001:41d0:701:1000::1135]",
+            "admin_pass": null,
+            "all_metadata": {
+              "ansible_user": "ubuntu",
+              "group": "openstack"
+            },
+            "all_tags": [],
+            "availability_zone": "nova",
+            "availability_zone_hints": null,
+            "block_device": [],
+            "config_drive": null,
+            "flavor_id": "91ca682c-3d92-4a8d-afde-a88d00b7f21e",
+            "flavor_name": "d2-2",
+            "floating_ip": null,
+            "force_delete": false,
+            "id": "50a51dff-f346-4073-91d6-1f3f7aa394e9",
+            "image_id": "23b45bbf-45ed-4c3a-abbd-ba2fe374e248",
+            "image_name": "Ubuntu 21.04",
+            "key_pair": "MichaelKora--0-00",
+            "metadata": {
+              "ansible_user": "ubuntu",
+              "group": "openstack"
+            },
+            "name": "github-runner-2",
+            "network": [
+              {
+                "access_network": false,
+                "fixed_ip_v4": "141.95.110.177",
+                "fixed_ip_v6": "[2001:41d0:701:1000::1135]",
+                "floating_ip": "",
+                "mac": "fa:16:3e:c2:7f:12",
+                "name": "Ext-Net",
+                "port": "",
+                "uuid": "ed0ab0c6-93ee-44f8-870b-d103065b1b34"
+              }
+            ],
+            "network_mode": null,
+            "personality": [],
+            "power_state": "active",
+            "region": "DE1",
+            "scheduler_hints": [],
+            "security_groups": [
+              "default"
+            ],
+            "stop_before_destroy": false,
+            "tags": null,
+            "timeouts": null,
+            "user_data": null,
+            "vendor_options": [],
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInVwZGF0ZSI6MTgwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "openstack_compute_keypair_v2.githubrunner"
+          ]
+        },
+        {
+          "index_key": 2,
+          "schema_version": 0,
+          "attributes": {
+            "access_ip_v4": "141.95.106.232",
+            "access_ip_v6": "[2001:41d0:701:1000::1ee5]",
+            "admin_pass": null,
+            "all_metadata": {
+              "ansible_user": "ubuntu",
+              "group": "openstack"
+            },
+            "all_tags": [],
+            "availability_zone": "nova",
+            "availability_zone_hints": null,
+            "block_device": [],
+            "config_drive": null,
+            "flavor_id": "d31419c1-8e1e-48c2-8a4c-28190650c817",
+            "flavor_name": "s1-2",
+            "floating_ip": null,
+            "force_delete": false,
+            "id": "aa2bbdab-e2a0-45ab-bfc5-6c9109801818",
+            "image_id": "579c7e43-44aa-4e6e-aac7-1e636b5f51b1",
+            "image_name": "Ubuntu 20.04",
+            "key_pair": "MichaelKora--0-00",
+            "metadata": {
+              "ansible_user": "ubuntu",
+              "group": "openstack"
+            },
+            "name": "github-runner-3",
+            "network": [
+              {
+                "access_network": false,
+                "fixed_ip_v4": "141.95.106.232",
+                "fixed_ip_v6": "[2001:41d0:701:1000::1ee5]",
+                "floating_ip": "",
+                "mac": "fa:16:3e:cb:b2:ff",
+                "name": "Ext-Net",
+                "port": "",
+                "uuid": "ed0ab0c6-93ee-44f8-870b-d103065b1b34"
+              }
+            ],
+            "network_mode": null,
+            "personality": [],
+            "power_state": "active",
+            "region": "DE1",
+            "scheduler_hints": [],
+            "security_groups": [
+              "default"
+            ],
+            "stop_before_destroy": false,
+            "tags": null,
+            "timeouts": null,
+            "user_data": null,
+            "vendor_options": [],
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInVwZGF0ZSI6MTgwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "openstack_compute_keypair_v2.githubrunner"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "openstack_compute_keypair_v2",
+      "name": "githubrunner",
+      "provider": "provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "fingerprint": "36:c7:c9:9c:0a:c2:78:16:0c:a7:ee:f0:41:24:15:a8",
+            "id": "MichaelKora--0-00",
+            "name": "MichaelKora--0-00",
+            "private_key": "",
+            "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDcONgImnEQSWIwo14oAm6d9sKTXTgCwIcTPkEStdBkqYXpqc74+V/rBzFZ+nfDE71ULSoiPcmg+7fKLv+PILhEo87fnd2A2MTfP+hlmoQxNsjx3fCy7qc7bWbQjnyp3DfIQlVeJb7FzhnjKiU/tAuJj5KkAjaaXmY//d970bXzJGKijksK6QHg8KnrC7uKbA7c+XtBRsbNIz+u/rrOT+WT/1x+BhcxF3OiqvTQOCb9wJRrz2vrNCjvGGJpPQjqp4zsgfhjR8YzsXmQUea9VBOnug2Squ/XsPkKEeYpuRIU6HAgJAU/BPYPiGIGeoouAmqEDagUgIpGqOjbZE7V141x michaelkora@Michael-Koras-MacBook-Pro-67.local\n",
+            "region": "DE1",
+            "value_specs": null
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    }
+  ]
+}
+
