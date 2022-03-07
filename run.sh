@@ -1,11 +1,17 @@
 #!/bin/bash
 
-#file="ip_adresses.txt"
+file="ip_adresses.txt"
+# store list of vm in a text file
+openstack server list > server_list.txt
+cat server_list.txt
 
-#echo "[myrunners]" >> ./inventory_file
-#while IFS= read -r line; do
-#  echo "$line" >> ./inventory_file
-#done < "$file"
+python setup.py
+
+
+
+while IFS= read -r line; do
+    ssh-copy-id -i id_rsa.pub ubuntu@$line
+done < "$file"
 
 
 #declare -i count=1
