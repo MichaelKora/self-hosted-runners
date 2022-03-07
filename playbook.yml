@@ -11,31 +11,24 @@
       command: echo "325b89bdc1c67264ec6f4515afda4534f14a6477d9ba241da19c43f9bed2f5a6  actions-runner/actions-runner-linux-x64-2.288.1.tar.gz" | shasum -a 256 -c
     - name: Extract the installer
       command: tar xzf actions-runner/actions-runner-linux-x64-2.288.1.tar.gz -C actions-runner/
-    - name: pwd
-      command: pwd
-    - name: ls
-      command: ls -al 
 
 - name: Activate and test the first runner
   hosts: runner-1
   tasks:
     - name: Configure and start the runner1
-      command: |
-        actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBQ3L6SJ37F6EDB35ALCEYBLC --labels linux,x64,runner1 --name myrunner1 --unattended --ephemeral
+      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBW5F5JAB3JUK4ELMGDCEYMXM --labels linux,x64,runner1 --name myrunner1 --unattended --ephemeral
 
 - name: Activate and test the  second runner
   hosts: runner-2
   tasks:
     - name: Configure and start the runner2
-      command: |
-        actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBQ3L6SJ37F6EDB35ALCEYBLC --labels linux,x64,runner2 --name myrunner2 --unattended --ephemeral
+      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBW5F5JAB3JUK4ELMGDCEYMXM --labels linux,x64,runner2 --name myrunner2 --unattended --ephemeral
   
 - name: Activate and test the  the runner3
   hosts: runner-3
   tasks:
     - name: Create a folder
-      command: |
-        actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBQ3L6SJ37F6EDB35ALCEYBLC --labels linux,x64,runner3 --name myrunner3 --unattended --ephemeral
+      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBW5F5JAB3JUK4ELMGDCEYMXM --labels linux,x64,runner3 --name myrunner3 --unattended --ephemeral
 
 - name: Configure with svc.sh
   hosts: myrunners
@@ -44,5 +37,5 @@
   tasks:
     - name: ./svc.sh install && ./svc.sh start
       command: |
-        sudo actions-runner/svc.sh install
-        sudo actions-runner/svc.sh start
+        sudo ./actions-runner/svc.sh install
+        sudo ./actions-runner/svc.sh start
