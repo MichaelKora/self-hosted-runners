@@ -17,7 +17,7 @@
   tasks:
     - name: Configure and start the runner1
       shell: |
-        cd ./actions-runner
+        cd actions-runner/
         ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBR2GJKXDD44WLHHTB3CEY524 --labels linux,x64,runner1 --name myrunner1 --unattended --ephemeral
 
 - name: Activate and test the  second runner
@@ -44,5 +44,6 @@
   tasks:
     - name: ./svc.sh install && ./svc.sh start
       shell: |
-        sudo ./actions-runner/svc.sh install
-        sudo ./actions-runner/svc.sh start
+        cd ./actions-runner
+        sudo ./svc.sh install
+        sudo ./svc.sh start
