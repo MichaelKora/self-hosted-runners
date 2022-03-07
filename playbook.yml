@@ -28,10 +28,8 @@
   hosts: runner-3
   tasks:
     - name: Create a folder
-      command: |
-        cd actions-runner/
-        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBTWY63ELJG3XJN72GLCEYZQ4 --labels linux,x64,runner3 --name myrunner3 --unattended --ephemeral
-        cd ..
+      command: ./actions-runner/config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBTWY63ELJG3XJN72GLCEYZQ4 --labels linux,x64,runner3 --name myrunner3 --unattended --ephemeral
+
 
 - name: Configure with svc.sh
   hosts: myrunners
@@ -40,7 +38,5 @@
   tasks:
     - name: ./svc.sh install && ./svc.sh start
       command: |
-        cd actions-runner/
         sudo ./actions-runner/svc.sh install
         sudo ./actions-runner/svc.sh start
-        cd ..
