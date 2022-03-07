@@ -13,4 +13,4 @@ cat result.txt
 
 cd ../..
 
-sleep 90
+sleep 20
