@@ -33,7 +33,7 @@
 - name: Configure with svc.sh
   hosts: myrunners
   become: yes
-  become_user: ubuntu
+#  become_user: ubuntu
   tasks:
     - name: ./svc.sh install && ./svc.sh start
       command: |
