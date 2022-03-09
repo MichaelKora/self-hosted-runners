@@ -66,3 +66,4 @@ id_rsa.pub
 testt.py
 test.txt
 openrc1.sh
+tf_destroy.yml

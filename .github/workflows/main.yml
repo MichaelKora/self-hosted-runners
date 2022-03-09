@@ -112,7 +112,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: tfstate
-          working-directory: tf/openstack/
+          path: tf/openstack/terraform.tfstate
 
       - name: connect to open stack
         shell: bash -l {0}
