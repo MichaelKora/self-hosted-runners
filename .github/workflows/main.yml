@@ -108,11 +108,11 @@ jobs:
       - name: install mamba
         uses: mamba-org/provision-with-micromamba@main
       
-      - name: Upload the tfstate file
-        uses: actions/upload-artifact@v3
+      - name: download the tfstate file
+        uses: actions/download-artifact@v3
         with:
           name: tfstate
-          path: tf/openstack/terraform.tfstate
+          path: tf/openstack/
 
       - name: connect to open stack
         shell: bash -l {0}

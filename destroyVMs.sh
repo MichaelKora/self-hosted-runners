@@ -4,7 +4,7 @@
 #wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
 #./bin/micromamba create --file environment.yml --yes -r $PWD/.micromamba
 #export PATH=$PWD/.micromamba/envs/default/bin:$PATH
-echo "delete scripts"
+echo "***delete scripts..."
 #openstack server list > server_list.txt
 
 #python delete.py
@@ -15,6 +15,6 @@ echo "delete scripts"
 #openstack server delete github-runner-0
 #ssh-keygen -q -N "" -f id_rsa
 
-cd tf/openStack
+cd tf/openstack
 #terraform init
 terraform apply -destroy -auto-approve
