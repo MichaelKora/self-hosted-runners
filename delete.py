@@ -1,8 +1,10 @@
 import subprocess
 
+
 def extractId(str_line):
     current_id = str_line.rsplit("|")[1]
     return current_id
+
 
 def get_all_ids(fileName, name_pattern):
     all_ids = []
@@ -23,9 +25,10 @@ def get_all_ids(fileName, name_pattern):
     file.close()
     return all_ids
 
-res_ids = get_all_ids("server_list.txt","github-runner")
 
-for id in res_ids:
-    cmd = f"openstack server delete {id}"
-    print (cmd)
-    subprocess.run(cmd , shell=True)
+res_ids = get_all_ids("server_list.txt", "github-runner")
+
+for the_id in res_ids:
+    cmd = f"openstack server delete {the_id}"
+    print(cmd)
+    subprocess.run(cmd, shell=True)

@@ -33,8 +33,14 @@ jobs:
 
           bash ./start_instances.sh
           bash ./run.sh ${{ env.GITHUB_OWNER }}
+      - name: Upload the tfstate file
+        uses: actions/upload-artifact@v3
+        with:
+          name: tfstate
+          path: tf/openstack/terraform.tfstate
 
-  test1:
+  run-on-runner1:
+    needs: get-runners-up-and-running
     runs-on: [self-hosted,linux,x64,runner1]
     steps:
       - name: list the files
@@ -50,7 +56,8 @@ jobs:
         shell: bash -l {0}
         run: echo "hello world"
 
-  test2:
+  run-on-runner2:
+    needs: get-runners-up-and-running
     runs-on: [self-hosted,linux,x64,runner2]
     steps:
       - name: list the files
@@ -66,7 +73,8 @@ jobs:
         shell: bash -l {0}
         run: echo "hello world"
 
-  test3:
+  run-on-runner3:
+    needs: get-runners-up-and-running
     runs-on: [self-hosted,linux,x64,runner3]
     steps:
       - name: list the files
@@ -81,3 +89,35 @@ jobs:
       - name: echo
         shell: bash -l {0}
         run: echo "hello world"
+  
+
+  delete-all-vms-and-keys:
+    needs: [run-on-runner1, run-on-runner2, run-on-runner3]
+    runs-on: ubuntu-latest
+    env:
+      OS_TENANT_ID: ${{ secrets.OS_TENANT_ID }}
+      OS_TENANT_NAME: ${{ secrets.OS_TENANT_NAME }}
+      OS_USERNAME: ${{ secrets.OS_USERNAME }}
+      OS_PASSWORD: ${{ secrets.OS_PASSWORD }}
+      OS_REGION_NAME: ${{ secrets.OS_REGION_NAME }}
+      TF_VAR_ANSIBLE_USER: ${{ secrets.TF_VAR_ANSIBLE_USER }}
+      GITHUB_OWNER: ${{ github.actor }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: install mamba
+        uses: mamba-org/provision-with-micromamba@main
+      
+      - name: Upload the tfstate file
+        uses: actions/upload-artifact@v3
+        with:
+          name: tfstate
+          working-directory: tf/openstack/
+
+      - name: connect to open stack
+        shell: bash -l {0}
+        run: |
+          source ./openrc.sh ${{ env.OS_TENANT_ID }} ${{ env.OS_TENANT_NAME }}  ${{ env.OS_USERNAME }} ${{ env.OS_PASSWORD }} ${{ env.OS_REGION_NAME }}
+          bash ./set_env.sh ${{ env.OS_TENANT_ID }} ${{ env.OS_TENANT_NAME }} ${{ env.OS_USERNAME }} ${{ env.OS_PASSWORD }} ${{ env.GITHUB_OWNER }}
+          source ./prep_tf.sh ${{ env.GITHUB_OWNER }}
+          bash ./destroyVMs.sh

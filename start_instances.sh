@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #create ssh key
 ssh-keygen -q -N "" -f id_rsa
 
@@ -10,7 +9,6 @@ terraform plan
 terraform apply -auto-approve
 terraform state pull >> result.txt
 cat result.txt
-
 cd ../..
 
 sleep 20
