@@ -11,6 +11,7 @@ python setup.py
 # copy the key of the runner in the vm in order to be able to reach them using ssh and therefore ansible
 echo "***copying runner ssh key to new created instances..."
 while IFS= read -r line; do
+    echo $line
     ssh-copy-id -i id_rsa.pub ubuntu@$line
 done < "$file"
 echo "***ssh key copied!"
