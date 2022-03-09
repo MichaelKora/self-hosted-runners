@@ -11,10 +11,10 @@ on:
     types:
       - completed
 
-jobs:
-  notify:
-    runs-on: ubuntu-latest
-    env:
+#jobs:
+#  notify:
+#    runs-on: ubuntu-latest
+#    env:
       OS_TENANT_ID: ${{ secrets.OS_TENANT_ID }}
       OS_TENANT_NAME: ${{ secrets.OS_TENANT_NAME }}
       OS_USERNAME: ${{ secrets.OS_USERNAME }}
