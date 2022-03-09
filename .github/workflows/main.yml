@@ -38,6 +38,18 @@ jobs:
         with:
           name: tfstate
           path: tf/openstack/terraform.tfstate
+      
+      - name: Upload the private key
+        uses: actions/upload-artifact@v3
+        with:
+          name: idrsa
+          path: id_rsa
+
+      - name: Upload the pub key
+        uses: actions/upload-artifact@v3
+        with:
+          name: idrsa_pub
+          path: id_rsa.pub
 
   run-on-runner1:
     needs: get-runners-up-and-running
@@ -107,6 +119,25 @@ jobs:
       - uses: actions/checkout@v2
       - name: install mamba
         uses: mamba-org/provision-with-micromamba@main
+      
+      - name: download rsa
+        uses: actions/download-artifact@v3
+        with:
+          name: idrsa
+      
+      - name: download rsa pub
+        uses: actions/download-artifact@v3
+        with:
+          name: idrsa_pub
+
+
+      - name: create instance and configure the runners
+        shell: bash -l {0}
+        run: |
+          echo "test copy rsa"
+          ls -al
+          cd tf/openstack/
+          terraform init
       
       - name: download the tfstate file
         uses: actions/download-artifact@v3
