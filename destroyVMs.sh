@@ -14,7 +14,14 @@ echo "***delete scripts..."
 
 #openstack server delete github-runner-0
 #ssh-keygen -q -N "" -f id_rsa
+ls -al
 
 cd tf/openstack
-#terraform init
+ls -al
+cat terraform.tfstate
+
+terraform init
+ls -al
+cat terraform.tfstate
+
 terraform apply -destroy -auto-approve
