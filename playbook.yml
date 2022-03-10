@@ -18,7 +18,7 @@
     - name: Configure and start the runner1
       shell: |
         cd actions-runner/
-        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBQ5WVZ33KYZ7ABS3QLCFIAT6 --labels linux,x64,runner1 --name myrunner1 --unattended --ephemeral
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBR3VFPL44RPMBGCO4LCFIECK --labels linux,x64,runner1 --name myrunner1 --unattended --ephemeral
 
 - name: Activate and test the  second runner
   hosts: runner-2
@@ -26,7 +26,7 @@
     - name: Configure and start the runner2
       shell: |
         cd ./actions-runner
-        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBQ5WVZ33KYZ7ABS3QLCFIAT6 --labels linux,x64,runner2 --name myrunner2 --unattended --ephemeral
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBR3VFPL44RPMBGCO4LCFIECK --labels linux,x64,runner2 --name myrunner2 --unattended --ephemeral
   
 - name: Activate and test the  the runner3
   hosts: runner-3
@@ -34,7 +34,7 @@
     - name: Configure and start the runner3
       shell: |
         cd ./actions-runner
-        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBQ5WVZ33KYZ7ABS3QLCFIAT6 --labels linux,x64,runner3 --name myrunner3 --unattended --ephemeral
+        ./config.sh --url https://github.com/MichaelKora/self-hosted-runners --token ATILRBR3VFPL44RPMBGCO4LCFIECK --labels linux,x64,runner3 --name myrunner3 --unattended --ephemeral
 
 
 - name: Configure with svc.sh
