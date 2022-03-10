@@ -1,14 +1,9 @@
 #!/bin/bash
 
-#Create mamba environment
-#wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
-#./bin/micromamba create --file environment.yml --yes -r $PWD/.micromamba
-#export PATH=$PWD/.micromamba/envs/default/bin:$PATH
 echo "***delete scripts..."
+##     manual deletion
 #openstack server list > server_list.txt
-
 #python delete.py
-
 #echo "after delete"
 #openstack server list
 
@@ -16,7 +11,7 @@ echo "***delete scripts..."
 #ssh-keygen -q -N "" -f id_rsa
 cd tf/openstack
 
-echo "*********************************************"
+echo "***************** ls -al tf/openstack****************************"
 ls -al
 echo "++++++++++++++++++++++++++++++++++++++++++++++++"
 cat terraform.tfstate

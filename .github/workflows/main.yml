@@ -131,11 +131,9 @@ jobs:
           name: idrsa_pub
 
 
-      - name: create instance and configure the runners
+      - name: terraform init
         shell: bash -l {0}
         run: |
-          echo "test copy rsa"
-          ls -al
           cd tf/openstack/
           terraform init
       
