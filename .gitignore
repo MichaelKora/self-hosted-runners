@@ -68,6 +68,7 @@ delete.py
 setup.py
 
 #sh and text
+test.sh
 test.txt
 openrc1.sh
 tf_destroy.yml

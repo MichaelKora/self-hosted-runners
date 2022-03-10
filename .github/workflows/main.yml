@@ -28,7 +28,8 @@ jobs:
           source ./openrc.sh ${{ env.OS_TENANT_ID }} ${{ env.OS_TENANT_NAME }}  ${{ env.OS_USERNAME }} ${{ env.OS_PASSWORD }} ${{ env.OS_REGION_NAME }}
           bash ./set_env.sh ${{ env.OS_TENANT_ID }} ${{ env.OS_TENANT_NAME }} ${{ env.OS_USERNAME }} ${{ env.OS_PASSWORD }} ${{ env.GITHUB_OWNER }}
           source ./prep_tf.sh ${{ env.GITHUB_OWNER }}
-          
+          openstack keypair delete ${{ env.GITHUB_OWNER }}-00
+
           bash ./start_instances.sh
           bash ./run.sh ${{ env.GITHUB_OWNER }}
       - name: Upload the tfstate file
