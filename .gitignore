@@ -72,3 +72,5 @@ test.sh
 test.txt
 openrc1.sh
 tf_destroy.yml
+manual_deletion.yml
+hosts
