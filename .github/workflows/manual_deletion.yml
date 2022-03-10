@@ -20,7 +20,7 @@ jobs:
         uses: mamba-org/provision-with-micromamba@main
       
       - name: download rsa
-        uses: actions/download-artifact@v2
+        uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{ github.token }}
           workflow: main.yml
@@ -28,7 +28,7 @@ jobs:
           name: idrsa
       
       - name: download rsa pub
-        uses: actions/download-artifact@v2
+        uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{ github.token }}
           workflow: main.yml
@@ -43,7 +43,7 @@ jobs:
           terraform init
       
       - name: download the tfstate file
-        uses: actions/download-artifact@v2
+        uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{ github.token }}
           workflow: main.yml
