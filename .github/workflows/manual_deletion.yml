@@ -22,11 +22,17 @@ jobs:
       - name: download rsa
         uses: actions/download-artifact@v3
         with:
+          github_token: ${{ github.token }}
+          workflow: main.yml
+          branch: main
           name: idrsa
       
       - name: download rsa pub
         uses: actions/download-artifact@v3
         with:
+          github_token: ${{ github.token }}
+          workflow: main.yml
+          branch: main
           name: idrsa_pub
 
 
@@ -39,6 +45,9 @@ jobs:
       - name: download the tfstate file
         uses: actions/download-artifact@v3
         with:
+          github_token: ${{ github.token }}
+          workflow: main.yml
+          branch: main
           name: tfstate
           path: tf/openstack/
 
