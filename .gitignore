@@ -64,6 +64,10 @@ id_rsa.pub
 # Python
 ***.pyc
 testt.py
+delete.py
+setup.py
+
+#sh and text
 test.txt
 openrc1.sh
 tf_destroy.yml

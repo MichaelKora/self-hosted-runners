@@ -14,8 +14,8 @@ jobs:
       OS_TENANT_NAME: ${{ secrets.OS_TENANT_NAME }}
       OS_USERNAME: ${{ secrets.OS_USERNAME }}
       OS_PASSWORD: ${{ secrets.OS_PASSWORD }}
-      OS_REGION_NAME: ${{ secrets.OS_REGION_NAME }}
-      TF_VAR_ANSIBLE_USER: ${{ secrets.TF_VAR_ANSIBLE_USER }}
+      OS_REGION_NAME: "DE1"
+      TF_VAR_ANSIBLE_USER: "ubuntu"
       GITHUB_OWNER: ${{ github.actor }}
 
     steps:
@@ -109,8 +109,8 @@ jobs:
       OS_TENANT_NAME: ${{ secrets.OS_TENANT_NAME }}
       OS_USERNAME: ${{ secrets.OS_USERNAME }}
       OS_PASSWORD: ${{ secrets.OS_PASSWORD }}
-      OS_REGION_NAME: ${{ secrets.OS_REGION_NAME }}
-      TF_VAR_ANSIBLE_USER: ${{ secrets.TF_VAR_ANSIBLE_USER }}
+      OS_REGION_NAME: "DE1"
+      TF_VAR_ANSIBLE_USER: "ubuntu"
       GITHUB_OWNER: ${{ github.actor }}
 
     steps:
