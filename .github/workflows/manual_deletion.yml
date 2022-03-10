@@ -1,6 +1,6 @@
 name: manualy destroy created instances
 
-#on:
+on: [workflow_dispatch]
 
 jobs:
   delete-ressources:
