@@ -9,7 +9,7 @@ We create instances at **runtime** with `terraform-openstack`, we then use ansib
   
       
 - create instances.
-  >  In our case we have 3 jobs to deploy in 3 different machines. In order to do so, machines are created from a github action (from an github runner) using terraform - openstack.
+  >  In our case we have 3 jobs to deploy in 3 different machines. In order to do so, machines are created from a github action (from a github runner) using terraform - openstack.
 The image names and the flavour names can be set in the file **tf/openstack/instance.tf**. 
     > - If you are creating other machines than `ubuntu`machines make sure to change the value of the variable `TF_VAR_ANSIBLE_USER` in the file **.github/workflows/main.yml**.
       > - You should also take a look at the documentation on how to create a runner and copy the right command for the instances you are creating (if they are not ubuntu instances)
