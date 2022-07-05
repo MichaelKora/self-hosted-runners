@@ -1,6 +1,8 @@
 # self-hosted-runners
-This repository is about deploying self hosted runners. 
-We create instances at **runtime** with `terraform-openstack`, we then use ansible to configure those users( so they will become runners). After that we assign them some jobs from the githubactions using labels. Once all jobs terminated we then delete all created ressources using `terraform`. 
+This repository contains information on deploying self-hosted runners. The following technologies are covered/used in this project: Ansible (for configuration), Terraform and OpenStack for provisioning, Pipelines (GitHub Actions) and shell scripts for automation, and Python for the implementation of a Terraform plugin.
+
+I'm using Terraform and Openstack to create instances at **runtime**, and then I'm configuring those instances to become runners with ansible. After that, I assign them jobs from the Pipeline using labels. After all jobs have been completed, I use 'terraform' to delete all resources that have been created.
+
 
 - Set up
   > Make sure you store your openstack credentials(OS_TENANT_ID,OS_TENANT_NAME,OS_USERNAME,OS_PASSWORD) in github secrets so they can be accessed in the `github-actions` using **${{ secrets.OS_TENANT_ID }}**, **${{ secrets.OS_TENANT_NAME }}**, **${{ secrets.OS_USERNAME }}**, **${{ secrets.OS_PASSWORD }}**.
@@ -9,9 +11,9 @@ We create instances at **runtime** with `terraform-openstack`, we then use ansib
   
       
 - create instances.
-  >  In our case we have 3 jobs to deploy in 3 different machines. In order to do so, machines are created from a github action (from a github runner) using terraform - openstack.
+  >  In this project i have three jobs to run on three different machines. In order to do so, machines are created from a github action (from a standard github runner) using terraform - openstack.
 The image names and the flavour names can be set in the file **tf/openstack/instance.tf**. 
-    > - If you are creating other machines than `ubuntu`machines make sure to change the value of the variable `TF_VAR_ANSIBLE_USER` in the file **.github/workflows/main.yml**.
+    > - If you are creating other machines than `ubuntu` machines make sure to change the value of the variable `TF_VAR_ANSIBLE_USER` in the file **.github/workflows/main.yml**.
       > - You should also take a look at the documentation on how to create a runner and copy the right command for the instances you are creating (if they are not ubuntu instances)
 
 - configure instances
