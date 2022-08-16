@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 cd tf/openstack
 echo "**** current tfstate ****"
 cat terraform.tfstate
