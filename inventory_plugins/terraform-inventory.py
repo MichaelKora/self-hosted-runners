@@ -117,7 +117,3 @@ class InventoryModule(BaseInventoryPlugin):
                                     self.inventory.set_variable(
                                         host, metadata, a["all_metadata"][metadata]
                                     )
-#ssh-import-id-gh michaelkora
-#ssh-import-id-gh m.koras@campus.tu-berlin.de
-#ssh ubuntu@123.123.123
-#ssh ubuntu@141.95.110.189
